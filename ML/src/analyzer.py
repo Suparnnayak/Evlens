@@ -59,17 +59,29 @@ def top_keywords(texts, k=10):
 
 
 
-def analyze_text_column(series: pd.Series, max_samples=200):
+def analyze_text_column(series: pd.Series, max_samples=200, include_all_reviews=False):
     """Return simple statistics and keyword/sentiment placeholders for a text column"""
     s = series.dropna().astype(str)
     n = len(s)
-    sample = s.sample(n=min(n, max_samples), random_state=42).tolist()
-    avg_len = np.mean([len(x.split()) for x in sample]) if sample else 0
-    keywords = top_keywords(sample, k=8)
+    
+    # If include_all_reviews is True, use all reviews for better analysis
+    if include_all_reviews or n <= max_samples:
+        reviews_list = s.tolist()
+    else:
+        # Sample reviews for display, but we'll still process all for keywords
+        reviews_list = s.tolist()
+        sample = s.sample(n=min(n, max_samples), random_state=42).tolist()
+    
+    avg_len = np.mean([len(x.split()) for x in reviews_list]) if reviews_list else 0
+    
+    # Use all reviews for keyword extraction for better insights
+    keywords = top_keywords(reviews_list, k=8)
+    
     return {
         'n_reviews': n,
         'avg_length_words': float(avg_len),
-        'sample_reviews': sample[:10],
+        'sample_reviews': reviews_list,  # Return all reviews, not just samples
+        'keywords': keywords,
     }
 
 def analyze_numeric_column(series: pd.Series):
@@ -115,7 +127,7 @@ def analyze_csv(path: str):
     # Text analysis
     text_cols = [c for c, t in col_types.items() if t == 'text']
     for c in text_cols:
-        report['analysis'][c] = analyze_text_column(df[c])
+        report['analysis'][c] = analyze_text_column(df[c], include_all_reviews=True)
 
 
     # Numeric analysis

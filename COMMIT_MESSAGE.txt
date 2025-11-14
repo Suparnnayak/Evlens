@@ -1,0 +1,23 @@
+Initial commit: Event Review Summarizer with Modern Gold/White UI
+
+Features:
+- Full-stack application with FastAPI backend and React frontend
+- AI-powered event review analysis with sentiment analysis
+- Modern gold and white UI/UX design
+- Functional search bar with AI Analyze feature
+- User authentication (JWT-based)
+- CSV file upload and analysis
+- Comprehensive analytics dashboard with charts
+- Key insights extraction
+- Download results as JSON
+
+Technical Stack:
+- Backend: FastAPI, SQLAlchemy, Transformers, TextBlob
+- Frontend: React, Vite, Tailwind CSS, Recharts
+- ML: Custom analyzer with sentiment analysis
+
+Documentation:
+- Complete setup and deployment guides
+- Sample CSV files for testing
+- GitHub and deployment instructions
+
