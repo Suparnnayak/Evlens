@@ -10,8 +10,9 @@ python-dateutil==2.8.2
 pandas>=2.2.2
 numpy>=1.26.2,<2.0.0
 scikit-learn>=1.3.2
-transformers>=4.35.2
-torch>=2.2.0
 textblob==0.17.1
-sentencepiece==0.2.0
 geopy==2.4.1
+# ML libraries (optional - only needed if ENABLE_ML_MODEL=true)
+# transformers>=4.35.2
+# torch>=2.2.0
+# sentencepiece==0.2.0

@@ -4,7 +4,14 @@ Improved ML service for event review analysis
 import sys
 import os
 
-from transformers import pipeline
+# Optional ML imports (only if transformers is installed)
+try:
+    from transformers import pipeline
+    TRANSFORMERS_AVAILABLE = True
+except ImportError:
+    TRANSFORMERS_AVAILABLE = False
+    pipeline = None
+
 from textblob import TextBlob
 import numpy as np
 import pandas as pd
@@ -20,18 +27,31 @@ _summarizer = None
 
 
 def get_summarizer():
-    """Lazy load the summarization model"""
+    """Lazy load the summarization model - DISABLED for Render free tier to save memory"""
     global _summarizer
+    # Disable model loading on Render free tier to prevent memory issues
+    # Use fallback summarization instead (based on sentiment analysis)
     if _summarizer is None:
+        # Check if we should load the model (disabled by default for memory)
+        enable_model = os.getenv("ENABLE_ML_MODEL", "false").lower() == "true"
+        
+        if not enable_model:
+            logger.info("ML model disabled (ENABLE_ML_MODEL=false). Using fallback summarization.")
+            _summarizer = None
+            return None
+        
+        if not TRANSFORMERS_AVAILABLE:
+            logger.warning("Transformers library not available. Using fallback summarization.")
+            _summarizer = None
+            return None
+        
         logger.info("Loading summarization model...")
         try:
             # Use a smaller, more memory-efficient model for Render free tier
-            # facebook/bart-large-cnn is too large, using t5-small instead
             _summarizer = pipeline(
                 "summarization",
                 model="t5-small",  # Much smaller model (~60MB vs 500MB)
                 device=-1,  # Use CPU (-1) or GPU (0, 1, etc.)
-                model_kwargs={"torch_dtype": "float16"} if hasattr(__import__("torch"), "float16") else {}
             )
             logger.info("Model loaded successfully")
         except Exception as e:

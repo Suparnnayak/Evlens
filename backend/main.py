@@ -35,15 +35,22 @@ app = FastAPI(
 # Get allowed origins from environment variable or use defaults
 allowed_origins_str = os.getenv(
     "ALLOWED_ORIGINS",
-    "http://localhost:3000,http://localhost:5173"
+    "http://localhost:3000,http://localhost:5173,https://event-review-summarizer-frontend.onrender.com"
 )
+
 # Split by comma and strip whitespace and trailing slashes
 allowed_origins = [
     origin.strip().rstrip('/') for origin in allowed_origins_str.split(",") if origin.strip()
 ]
 
+# Always include the frontend URL as a fallback (even if env var is missing)
+frontend_url = "https://event-review-summarizer-frontend.onrender.com"
+if frontend_url not in allowed_origins:
+    allowed_origins.append(frontend_url)
+
 # Log CORS configuration for debugging
 print(f"CORS Allowed Origins: {allowed_origins}")
+print(f"ALLOWED_ORIGINS env var: {allowed_origins_str}")
 
 app.add_middleware(
     CORSMiddleware,
