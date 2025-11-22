@@ -164,30 +164,38 @@ def generate_summary_improved(report: Dict[str, Any]) -> Dict[str, Any]:
             # Take first 2500 and last 2500 chars to preserve context
             combined_text = combined_text[:2500] + " " + combined_text[-2500:]
         
-        # Improved Sentiment Analysis (do this first for fallback)
-        sentiments = []
-        sentiment_scores = []
-        
-        for review in all_reviews:
-            blob = TextBlob(review)
-            polarity = blob.sentiment.polarity
-            subjectivity = blob.sentiment.subjectivity
-            sentiments.append({
-                "polarity": float(polarity),
-                "subjectivity": float(subjectivity),
-                "text": review[:100]  # First 100 chars
-            })
-            sentiment_scores.append(polarity)
-        
-        sentiment_scores = np.array(sentiment_scores)
-        
-        # More nuanced sentiment classification
-        pos = int((sentiment_scores > 0.1).sum())
-        neg = int((sentiment_scores < -0.1).sum())
-        neu = len(sentiment_scores) - pos - neg
-        
-        # Calculate average sentiment
-        avg_sentiment = float(np.mean(sentiment_scores))
+        # Improved Sentiment Analysis
+        if 'sentiment_data' in report:
+            sentiment_data = report['sentiment_data']
+            pos = sentiment_data.get('positive', 0)
+            neg = sentiment_data.get('negative', 0)
+            neu = sentiment_data.get('neutral', 0)
+            n_reviews = sentiment_data.get('total', len(all_reviews))
+            
+            if pos + neg + neu > 0:
+                avg_sentiment = (pos - neg) / (pos + neg + neu)
+            else:
+                avg_sentiment = 0.0
+        else:
+            sentiments = []
+            sentiment_scores = []
+            
+            for review in all_reviews:
+                blob = TextBlob(review)
+                polarity = blob.sentiment.polarity
+                subjectivity = blob.sentiment.subjectivity
+                sentiments.append({
+                    "polarity": float(polarity),
+                    "subjectivity": float(subjectivity),
+                    "text": review[:100]
+                })
+                sentiment_scores.append(polarity)
+            
+            sentiment_scores = np.array(sentiment_scores)
+            pos = int((sentiment_scores > 0.1).sum())
+            neg = int((sentiment_scores < -0.1).sum())
+            neu = len(sentiment_scores) - pos - neg
+            avg_sentiment = float(np.mean(sentiment_scores))
         
         # Determine overall sentiment
         if avg_sentiment > 0.15:

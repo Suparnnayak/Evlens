@@ -96,28 +96,39 @@ def analyze_numeric_column(series: pd.Series):
     }
 
 def analyze_gps(df, lat_col, lon_col):
-    # simple clustering to find densest cluster
-    coords = df[[lat_col, lon_col]].dropna().astype(float).values
-    res = {'n_points': int(len(coords))}
-    if len(coords) >= 3:
-        try:
-            cl = DBSCAN(eps=0.001, min_samples=3).fit(coords)
-            labels = cl.labels_
-            counts = Counter(labels[labels >= 0])
-            if counts:
-                top_label = counts.most_common(1)[0][0]
-                cluster_coords = coords[labels == top_label]
-                centroid = list(cluster_coords.mean(axis=0))
-                res.update({'top_cluster_count': int(counts[top_label]), 'top_cluster_centroid': centroid})
-        except Exception:
-            pass
-    return res
+    try:
+        coords = df[[lat_col, lon_col]].dropna()
+        coords = coords.apply(pd.to_numeric, errors='coerce').dropna().values
+        
+        res = {'n_points': int(len(coords))}
+        if len(coords) >= 3:
+            try:
+                cl = DBSCAN(eps=0.001, min_samples=3).fit(coords)
+                labels = cl.labels_
+                counts = Counter(labels[labels >= 0])
+                if counts:
+                    top_label = counts.most_common(1)[0][0]
+                    cluster_coords = coords[labels == top_label]
+                    centroid = list(cluster_coords.mean(axis=0))
+                    res.update({'top_cluster_count': int(counts[top_label]), 'top_cluster_centroid': centroid})
+            except Exception:
+                pass
+        return res
+    except Exception:
+        return {'n_points': 0}
 
 
 
 
 def analyze_csv(path: str):
-    df = pd.read_csv(path)
+    try:
+        df = pd.read_csv(path, encoding='utf-8', on_bad_lines='warn')
+    except Exception as e:
+        try:
+            df = pd.read_csv(path, encoding='latin-1', on_bad_lines='warn')
+        except Exception as e2:
+            return {'error': f'Failed to read CSV: {str(e2)}'}
+    
     if df.shape[0] == 0:
         return {'error': 'empty csv'}
     col_types = detect_columns(df)
@@ -144,6 +155,14 @@ def analyze_csv(path: str):
         lon_col = lon_cols[0]
         report['analysis']['_gps'] = analyze_gps(df, lat_col, lon_col)
 
+    if 'postSentiment' in df.columns:
+        sentiment_counts = df['postSentiment'].value_counts().to_dict()
+        report['sentiment_data'] = {
+            'positive': int(sentiment_counts.get('positive', 0)),
+            'neutral': int(sentiment_counts.get('neutral', 0)),
+            'negative': int(sentiment_counts.get('negative', 0)),
+            'total': int(df.shape[0])
+        }
 
     return report
 

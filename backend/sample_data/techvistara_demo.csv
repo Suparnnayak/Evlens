@@ -1,0 +1,52 @@
+eventName,eventDate,platform,postType,postContent,postUrl,postAuthor,postLikes,postComments,postShares,postSentiment,postDate,postEngagement,relevanceScore
+Techvistara 5.0,2025-11-12,reddit,post,Great tech event! Learned a lot about new technologies.,https://reddit.com/r/tech/1,user123,245,12,5,positive,2025-11-12T10:00:00,262,0.85
+Techvistara 5.0,2025-11-12,reddit,post,The workshops were informative but could have been better organized.,https://reddit.com/r/tech/2,techfan,189,8,3,neutral,2025-11-12T11:30:00,200,0.72
+Techvistara 5.0,2025-11-12,reddit,post,Not impressed with the keynote speakers. Expected more.,https://reddit.com/r/tech/3,reviewer1,156,15,2,negative,2025-11-12T12:00:00,173,0.65
+Techvistara 5.0,2025-11-12,reddit,post,Decent event overall. Good networking opportunities.,https://reddit.com/r/tech/4,networker,198,10,4,neutral,2025-11-12T13:00:00,212,0.78
+Techvistara 5.0,2025-11-12,reddit,post,The venue was nice but food options were limited.,https://reddit.com/r/tech/5,attendee99,167,9,1,neutral,2025-11-12T14:00:00,177,0.68
+Techvistara 5.0,2025-11-12,reddit,post,Loved the coding competition! Very well executed.,https://reddit.com/r/tech/6,coder42,234,14,6,positive,2025-11-12T15:00:00,254,0.88
+Techvistara 5.0,2025-11-12,reddit,post,Registration process was confusing and took too long.,https://reddit.com/r/tech/7,frustrated,145,11,2,negative,2025-11-12T16:00:00,158,0.62
+Techvistara 5.0,2025-11-12,reddit,post,Good event for beginners but nothing new for experienced devs.,https://reddit.com/r/tech/8,seniordev,178,13,3,neutral,2025-11-12T17:00:00,194,0.71
+Techvistara 5.0,2025-11-12,reddit,post,The swag was cool! Nice t-shirts and stickers.,https://reddit.com/r/tech/9,swagfan,212,7,8,positive,2025-11-12T18:00:00,227,0.82
+Techvistara 5.0,2025-11-12,reddit,post,WiFi kept dropping during demos. Very frustrating.,https://reddit.com/r/tech/10,techie,134,10,1,negative,2025-11-12T19:00:00,145,0.58
+Techvistara 5.0,2025-11-12,reddit,post,Panel discussions were insightful and engaging.,https://reddit.com/r/tech/11,panelist,201,9,5,positive,2025-11-12T20:00:00,215,0.79
+Techvistara 5.0,2025-11-12,reddit,post,Average event. Nothing special but not terrible either.,https://reddit.com/r/tech/12,neutral_guy,172,8,2,neutral,2025-11-12T21:00:00,182,0.69
+Techvistara 5.0,2025-11-12,reddit,post,Parking was a nightmare. Should have better arrangements.,https://reddit.com/r/tech/13,driver,149,12,1,negative,2025-11-12T22:00:00,162,0.61
+Techvistara 5.0,2025-11-12,reddit,post,Great to see so many students participating!,https://reddit.com/r/tech/14,professor,223,11,7,positive,2025-11-12T23:00:00,241,0.84
+Techvistara 5.0,2025-11-12,reddit,post,The AI workshop was fantastic! Highly recommend.,https://reddit.com/r/tech/15,aidev,256,15,9,positive,2025-11-13T00:00:00,280,0.91
+Techvistara 5.0,2025-11-12,reddit,post,Too crowded. Hard to move around between sessions.,https://reddit.com/r/tech/16,claustrophobic,138,14,2,negative,2025-11-13T01:00:00,154,0.59
+Techvistara 5.0,2025-11-12,reddit,post,Sponsors booths were interesting. Got some good leads.,https://reddit.com/r/tech/17,jobseeker,195,10,4,neutral,2025-11-13T02:00:00,209,0.75
+Techvistara 5.0,2025-11-12,reddit,post,Sound system issues during the main event. Disappointing.,https://reddit.com/r/tech/18,audiophile,142,13,1,negative,2025-11-13T03:00:00,156,0.60
+Techvistara 5.0,2025-11-12,reddit,post,Met some amazing people! Great community vibe.,https://reddit.com/r/tech/19,community,218,12,6,positive,2025-11-13T04:00:00,236,0.83
+Techvistara 5.0,2025-11-12,reddit,post,Schedule was too packed. No time for breaks.,https://reddit.com/r/tech/20,tired,163,9,3,neutral,2025-11-13T05:00:00,175,0.70
+Techvistara 5.0,2025-11-12,reddit,post,Hackathon prizes were generous! Well done organizers.,https://reddit.com/r/tech/21,winner,241,14,8,positive,2025-11-13T06:00:00,263,0.87
+Techvistara 5.0,2025-11-12,reddit,post,Coffee ran out by noon. Need better catering planning.,https://reddit.com/r/tech/22,caffeine,151,11,2,negative,2025-11-13T07:00:00,164,0.63
+Techvistara 5.0,2025-11-12,reddit,post,Security was tight. Felt safe throughout the event.,https://reddit.com/r/tech/23,safety_first,186,8,4,neutral,2025-11-13T08:00:00,198,0.73
+Techvistara 5.0,2025-11-12,reddit,post,The closing ceremony was underwhelming.,https://reddit.com/r/tech/24,critic,147,10,1,negative,2025-11-13T09:00:00,158,0.61
+Techvistara 5.0,2025-11-12,reddit,post,Overall a solid event. Would attend again next year!,https://reddit.com/r/tech/25,regular,209,13,5,positive,2025-11-13T10:00:00,227,0.81
+Techvistara 5.0,2025-11-12,reddit,post,Volunteers were helpful and friendly throughout.,https://reddit.com/r/tech/26,grateful,192,9,3,positive,2025-11-13T11:00:00,204,0.76
+Techvistara 5.0,2025-11-12,reddit,post,Some sessions felt rushed. Need better time management.,https://reddit.com/r/tech/27,timekeeper,169,12,2,neutral,2025-11-13T12:00:00,183,0.71
+Techvistara 5.0,2025-11-12,reddit,post,Accessibility could be improved for disabled attendees.,https://reddit.com/r/tech/28,advocate,155,15,3,negative,2025-11-13T13:00:00,173,0.64
+Techvistara 5.0,2025-11-12,reddit,post,Expo hall had great tech demos! Very interactive.,https://reddit.com/r/tech/29,explorer,227,11,7,positive,2025-11-13T14:00:00,245,0.85
+Techvistara 5.0,2025-11-12,reddit,post,Price was reasonable for what was offered.,https://reddit.com/r/tech/30,budget,174,8,4,neutral,2025-11-13T15:00:00,186,0.72
+Techvistara 5.0,2025-11-12,reddit,post,Livestream quality was poor. Couldn't watch remotely.,https://reddit.com/r/tech/31,remote,139,14,1,negative,2025-11-13T16:00:00,154,0.59
+Techvistara 5.0,2025-11-12,reddit,post,Enjoyed the startup pitch competition immensely!,https://reddit.com/r/tech/32,entrepreneur,238,13,6,positive,2025-11-13T17:00:00,257,0.86
+Techvistara 5.0,2025-11-12,reddit,post,Merchandise was overpriced in my opinion.,https://reddit.com/r/tech/33,shopper,158,10,2,neutral,2025-11-13T18:00:00,170,0.67
+Techvistara 5.0,2025-11-12,reddit,post,No clear signage. Got lost multiple times.,https://reddit.com/r/tech/34,wanderer,144,11,1,negative,2025-11-13T19:00:00,156,0.60
+Techvistara 5.0,2025-11-12,reddit,post,Keynote on blockchain was eye-opening!,https://reddit.com/r/tech/35,crypto,249,15,8,positive,2025-11-13T20:00:00,272,0.89
+Techvistara 5.0,2025-11-12,reddit,post,Decent networking but could use more structured activities.,https://reddit.com/r/tech/36,networker2,181,9,3,neutral,2025-11-13T21:00:00,193,0.74
+Techvistara 5.0,2025-11-12,reddit,post,Air conditioning was too cold in some halls.,https://reddit.com/r/tech/37,chilly,152,8,2,neutral,2025-11-13T22:00:00,162,0.66
+Techvistara 5.0,2025-11-12,reddit,post,Photography restrictions were annoying.,https://reddit.com/r/tech/38,photographer,146,12,1,negative,2025-11-13T23:00:00,159,0.62
+Techvistara 5.0,2025-11-12,reddit,post,Great diversity in speakers and topics!,https://reddit.com/r/tech/39,diversity,215,10,5,positive,2025-11-14T00:00:00,230,0.82
+Techvistara 5.0,2025-11-12,reddit,post,The mobile app for the event was buggy.,https://reddit.com/r/tech/40,appuser,141,13,1,negative,2025-11-14T01:00:00,155,0.61
+Techvistara 5.0,2025-11-12,reddit,post,Hands-on labs were the highlight for me!,https://reddit.com/r/tech/41,learner,232,14,7,positive,2025-11-14T02:00:00,253,0.87
+Techvistara 5.0,2025-11-12,reddit,post,Waited too long in lines for everything.,https://reddit.com/r/tech/42,impatient,148,11,2,neutral,2025-11-14T03:00:00,161,0.65
+Techvistara 5.0,2025-11-12,reddit,post,Organizers were responsive to feedback. Appreciated!,https://reddit.com/r/tech/43,feedback_giver,204,9,4,positive,2025-11-14T04:00:00,217,0.80
+Techvistara 5.0,2025-11-12,reddit,post,Some speakers went over time. Threw off schedule.,https://reddit.com/r/tech/44,scheduler,166,10,3,neutral,2025-11-14T05:00:00,179,0.69
+Techvistara 5.0,2025-11-12,reddit,post,Bathrooms were clean and well-maintained.,https://reddit.com/r/tech/45,hygiene,177,7,2,neutral,2025-11-14T06:00:00,186,0.71
+Techvistara 5.0,2025-11-12,reddit,post,Disappointed with the lack of advanced technical content.,https://reddit.com/r/tech/46,expert,137,14,1,negative,2025-11-14T07:00:00,152,0.58
+Techvistara 5.0,2025-11-12,reddit,post,The closing party was fun! Great way to end.,https://reddit.com/r/tech/47,partier,226,12,6,positive,2025-11-14T08:00:00,244,0.84
+Techvistara 5.0,2025-11-12,reddit,post,Good mix of technical and non-technical sessions.,https://reddit.com/r/tech/48,balanced,189,10,4,neutral,2025-11-14T09:00:00,203,0.75
+Techvistara 5.0,2025-11-12,reddit,post,Badge printing was slow. Long wait at registration.,https://reddit.com/r/tech/49,early_bird,143,13,1,negative,2025-11-14T10:00:00,157,0.60
+Techvistara 5.0,2025-11-12,reddit,post,Inspiring talks from industry leaders!,https://reddit.com/r/tech/50,inspired,243,15,8,positive,2025-11-14T11:00:00,266,0.88
+Techvistara 5.0,2025-11-12,reddit,post,Would have liked more breaks between sessions.,https://reddit.com/r/tech/51,exhausted,171,9,3,neutral,2025-11-14T12:00:00,183,0.70
